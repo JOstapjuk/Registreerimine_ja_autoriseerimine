@@ -63,9 +63,9 @@ def autoriseerimine(n: list, p: list) -> bool:
     :rtype: bool
     """
     while True:
-        nimi = input("Sisesta kasutajanimi: ").capitalize()
-        parool = input("Sisesta parool: ")
-        if nimi in n and parool == p[n.index(nimi)]:
+        nimi=input("Sisesta kasutajanimi: ").capitalize()
+        parool=input("Sisesta parool: ")
+        if nimi in n and parool==p[n.index(nimi)]:
             print("Autentimine õnnestus!")
             print("")
             return True
@@ -82,20 +82,20 @@ def muuda_parool(n:list,p:list)->any:
     :rtype: any
     """
     while True:
-        nimi = input("Sisesta oma kasutajanimi: ").capitalize()
+        nimi=input("Sisesta oma kasutajanimi: ").capitalize()
         if nimi not in n:
             print("Sellist kasutajanime ei ole.")
             print("")
             continue
         else:
-            index = n.index(nimi)
+            index=n.index(nimi)
             break
 
     while True:
-        muutmine = input("Kas soovid muuta nime (N) või parooli (P)?: ").capitalize()
-        if muutmine == "N":
-            uus_nimi = input("Sisesta uus nimi: ").capitalize()
-            if uus_nimi == "":
+        muutmine=input("Kas soovid muuta nime (N) või parooli (P)?: ").capitalize()
+        if muutmine=="N":
+            uus_nimi=input("Sisesta uus nimi: ").capitalize()
+            if uus_nimi=="":
                 print("Nimi ei saa olla tühi.")
                 print("")
                 continue
@@ -104,18 +104,18 @@ def muuda_parool(n:list,p:list)->any:
                 print("")
                 continue
             else:
-                n[index] = uus_nimi
+                n[index]=uus_nimi
                 print("Nimi edukalt muudetud.")
                 print("")
                 break
-        elif muutmine == "P":
-            uus_parool = input("Sisesta uus parool: ")
-            if uus_parool == "":
+        elif muutmine=="P":
+            uus_parool=input("Sisesta uus parool: ")
+            if uus_parool=="":
                 print("Parool ei saa olla tühi.")
                 print("")
                 continue
             else:
-                p[index] = uus_parool
+                p[index]=uus_parool
                 print("Parool edukalt muudetud.")
                 print("")
                 break
