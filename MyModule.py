@@ -156,4 +156,4 @@ def unustatud_parool(n: list, p: list, s: list) -> any:
 
         #fdgc ebmv xelp cunt 
 
-#def email()
+#def send_to_email()
