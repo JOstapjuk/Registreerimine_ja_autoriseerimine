@@ -1,9 +1,9 @@
-from MyModule import * 
+Ôªøfrom MyModule import * 
 nimed=[]
 paroolid=[]
 salasonad=[]
 while True:
-    operatsioon=print("Registreerimine(R)\nAutoriseerimine(A)\nNime vıi parooli muutmine(M)\nUnustanud parooli taastamine(U)\nLıpetamine(L)")
+    operatsioon=print("Registreerimine(R)\nAutoriseerimine(A)\nNime v√µi parooli muutmine(M)\nUnustanud parooli taastamine(U)\nL√µpetamine(L)")
     vastus=str(input()).capitalize()
     if vastus=="R":
         uus_nimi,uus_parool,uus_salasona=registreerimine(nimed,paroolid,salasonad)

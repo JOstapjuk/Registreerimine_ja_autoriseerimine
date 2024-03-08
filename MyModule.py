@@ -1,17 +1,17 @@
-import random
+Ôªøimport random
 
 def registreerimine(n:list,p:list,s:list)->any:
     """ 
     Funktsioon lisab uue kasutaja
-    :param list n: Nimi j‰rjend
-    :param list p: Parool j‰rjend
-    :param list p: Salasına j‰rjend
+    :param list n: Nimi j√§rjend
+    :param list p: Parool j√§rjend
+    :param list p: Salas√µna j√§rjend
     :rtype: any
     """
     while True:
         nimi=input("Nimi: ").capitalize()
         if nimi=="":
-            print("Nimi ei saa olla t¸hi.")
+            print("Nimi ei saa olla t√ºhi.")
             print("")
         elif nimi in n:
             print("See nimi on juba registreeritud.")
@@ -20,11 +20,11 @@ def registreerimine(n:list,p:list,s:list)->any:
             break
     
     while True:
-        valik=input("Kas soovite sisestada oma parooli vıi genereerida ¸he? (Sisesta/Gener): ").capitalize()
+        valik=input("Kas soovite sisestada oma parooli v√µi genereerida √ºhe? (Sisesta/Gener): ").capitalize()
         if valik=="Sisesta":
             parool=input("Parool: ")
         elif valik=="Gener":
-            str0=".,:;!_*-+()/#§%&"
+            str0=".,:;!_*-+()/#¬§%&"
             str1='0123456789'
             str2='qwertyuiopasdfghjklzxcvbnm'
             str3=str2.upper()
@@ -33,52 +33,52 @@ def registreerimine(n:list,p:list,s:list)->any:
             random.shuffle(ls)
             parool=''.join([random.choice(ls) for x in range(12)])
         else:
-            print("Palun vali 'sisesta' vıi 'genereri'")
+            print("Palun vali 'sisesta' v√µi 'genereri'")
             print("")
             continue
         
         if parool=="":
-            print("Parool ei saa olla t¸hi.")
+            print("Parool ei saa olla t√ºhi.")
             print("")
         else:
             break
     
     while True:
-        salasına=input("Sisesta salasına: ")
-        if salasına=="":
-            print("Salasına ei saa olla t¸hi.")
+        salas√µna=input("Sisesta salas√µna: ")
+        if salas√µna=="":
+            print("Salas√µna ei saa olla t√ºhi.")
             print("")
         else:
             print("Te olete edukalt registreerunud")
             n.append(nimi)
             p.append(parool)
-            s.append(salasına)
-            return nimi, parool, salasına
+            s.append(salas√µna)
+            return nimi, parool, salas√µna
 def autoriseerimine(n: list, p: list) -> bool:
     """
-    Autoriseerib kasutaja s¸steemi.
+    Autoriseerib kasutaja s√ºsteemi.
 
-    :param list n: Nimi j‰rjend
-    :param list p: Parool j‰rjend
+    :param list n: Nimi j√§rjend
+    :param list p: Parool j√§rjend
     :rtype: bool
     """
     while True:
         nimi=input("Sisesta kasutajanimi: ").capitalize()
         parool=input("Sisesta parool: ")
         if nimi in n and parool==p[n.index(nimi)]:
-            print("Autentimine ınnestus!")
+            print("Autentimine √µnnestus!")
             print("")
             return True
         else:
-            print("Vigane kasutajanimi vıi parool!")
+            print("Vigane kasutajanimi v√µi parool!")
             print("")
 
 def muuda_parool(n:list,p:list)->any:
     """
     Muudab kasutaja parooli.
 
-    :param list n: Nimi j‰rjend
-    :param list n: Parool j‰rjend
+    :param list n: Nimi j√§rjend
+    :param list n: Parool j√§rjend
     :rtype: any
     """
     while True:
@@ -92,11 +92,11 @@ def muuda_parool(n:list,p:list)->any:
             break
 
     while True:
-        muutmine=input("Kas soovid muuta nime (N) vıi parooli (P)?: ").capitalize()
+        muutmine=input("Kas soovid muuta nime (N) v√µi parooli (P)?: ").capitalize()
         if muutmine=="N":
             uus_nimi=input("Sisesta uus nimi: ").capitalize()
             if uus_nimi=="":
-                print("Nimi ei saa olla t¸hi.")
+                print("Nimi ei saa olla t√ºhi.")
                 print("")
                 continue
             elif uus_nimi in n:
@@ -111,7 +111,7 @@ def muuda_parool(n:list,p:list)->any:
         elif muutmine=="P":
             uus_parool=input("Sisesta uus parool: ")
             if uus_parool=="":
-                print("Parool ei saa olla t¸hi.")
+                print("Parool ei saa olla t√ºhi.")
                 print("")
                 continue
             else:
@@ -120,16 +120,16 @@ def muuda_parool(n:list,p:list)->any:
                 print("")
                 break
         else:
-            print("Vigane valik. Palun vali 'N' vıi 'P'.")
+            print("Vigane valik. Palun vali 'N' v√µi 'P'.")
             print("")  
 
 def unustatud_parool(n: list, p: list, s: list) -> any:
     """
-    Taastab unustatud parooli, kasutades eelnevalt sisestatud salasına.
+    Taastab unustatud parooli, kasutades eelnevalt sisestatud salas√µna.
 
-    :param list n: Nimi j‰rjend
-    :param list p: Parool j‰rjend
-    :param list s: Salasına j‰rjend
+    :param list n: Nimi j√§rjend
+    :param list p: Parool j√§rjend
+    :param list s: Salas√µna j√§rjend
     :rtype: any
     """
     while True:
@@ -141,15 +141,19 @@ def unustatud_parool(n: list, p: list, s: list) -> any:
         else:
             break
 
-    salasona=input("Sisesta salasına: ")
+    salasona=input("Sisesta salas√µna: ")
     if salasona in s:
         index=s.index(salasona)
         if n[index]==nimi:
-            print("Kasutaja ", nimi "parool on: "{p[index]})
+            print(f"Kasutaja {nimi} parool on: {p[index]}")
             print("")
         else:
             print("Vale kasutajanimi.")
             print("")
     else:
-        print("Vale salasına.")
+        print("Vale salas√µna.")
         print("")
+
+        #fdgc ebmv xelp cunt 
+
+#def email()

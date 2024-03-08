@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>c573a7b5-b165-489e-a396-20de824aeb99</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Registreerimine_ja_autoriseerimine.py</StartupFile>
+    <StartupFile>srv.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -21,6 +21,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="srv.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="MyModule.py">
       <SubType>Code</SubType>
     </Compile>
