@@ -10,7 +10,7 @@ msg=EmailMessage()
 msg.set_content("Tere tulemast!")
 msg['Subject']="Kirje teema"
 msg['From']="jelizaveta.ostapjuk.work@gmail.com"
-msg['To']="marina.oleinik@tthk.ee"
+msg['To']=""
 try:
     server=smtplib.SMTP(smtp_server,port)
     server.ehlo()

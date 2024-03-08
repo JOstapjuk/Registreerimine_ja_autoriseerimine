@@ -1,4 +1,4 @@
-﻿from MyModule import * 
+from MyModule import * 
 nimed=[]
 paroolid=[]
 salasonad=[]

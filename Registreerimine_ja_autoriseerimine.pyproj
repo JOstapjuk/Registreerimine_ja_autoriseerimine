@@ -21,6 +21,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="loe_failist.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="srv.py">
       <SubType>Code</SubType>
     </Compile>
@@ -28,6 +31,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Registreerimine_ja_autoriseerimine.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="päevad.txt" />
+    <Content Include="text.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

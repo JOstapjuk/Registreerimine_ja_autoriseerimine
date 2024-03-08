@@ -1,4 +1,4 @@
-﻿import random
+import random
 
 def registreerimine(n:list,p:list,s:list)->any:
     """ 
