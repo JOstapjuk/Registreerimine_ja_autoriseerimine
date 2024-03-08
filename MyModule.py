@@ -133,8 +133,8 @@ def unustatud_parool(n: list, p: list, s: list) -> any:
     :rtype: any
     """
     while True:
-        kasutajanimi=input("Sisesta oma kasutajanimi: ").capitalize()
-        if kasutajanimi not in n:
+        nimi=input("Sisesta oma kasutajanimi: ").capitalize()
+        if nimi not in n:
             print("Sellist kasutajanime ei ole.")
             print("")
             continue
@@ -144,8 +144,8 @@ def unustatud_parool(n: list, p: list, s: list) -> any:
     salasona=input("Sisesta salasõna: ")
     if salasona in s:
         index=s.index(salasona)
-        if n[index]==kasutajanimi:
-            print(f"Kasutaja {kasutajanimi} parool on: {p[index]}")
+        if n[index]==nimi:
+            print("Kasutaja ", nimi "parool on: "{p[index]})
             print("")
         else:
             print("Vale kasutajanimi.")
