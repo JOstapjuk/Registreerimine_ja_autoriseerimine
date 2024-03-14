@@ -123,37 +123,54 @@ def muuda_parool(n:list,p:list)->any:
             print("Vigane valik. Palun vali 'N' või 'P'.")
             print("")  
 
-def unustatud_parool(n: list, p: list, s: list) -> any:
+
+
+        #fdgc ebmv xelp cunt 
+
+#def send_to_email()
+import smtplib
+import ssl
+from email.message import EmailMessage
+def unustatud_parool(n: list, p: list, s: list) -> None:
     """
-    Taastab unustatud parooli, kasutades eelnevalt sisestatud salasõna.
+    Saadab unustatud parooli e-kirja kasutajale.
 
     :param list n: Nimi järjend
     :param list p: Parool järjend
     :param list s: Salasõna järjend
-    :rtype: any
     """
     while True:
-        nimi=input("Sisesta oma kasutajanimi: ").capitalize()
+        nimi = input("Sisesta oma kasutajanimi: ").capitalize()
         if nimi not in n:
             print("Sellist kasutajanime ei ole.")
             print("")
             continue
         else:
+            index = n.index(nimi)
             break
 
-    salasona=input("Sisesta salasõna: ")
-    if salasona in s:
-        index=s.index(salasona)
-        if n[index]==nimi:
-            print(f"Kasutaja {nimi} parool on: {p[index]}")
-            print("")
-        else:
-            print("Vale kasutajanimi.")
-            print("")
-    else:
-        print("Vale salasõna.")
-        print("")
+    email = input("Sisesta oma e-posti aadress: ")
+    if email == "":
+        print("E-posti aadress ei saa olla tühi.")
+        return
 
-        #fdgc ebmv xelp cunt 
+    port = 587
+    smtp_server = "smtp.gmail.com"
+    sender_email = "jelizaveta.ostapjuk.work@gmail.com"
+    password = input("Sisestage oma e-posti parool: ")
+    context = ssl.create_default_context()
+    msg = EmailMessage()
+    msg.set_content(f"Teie parool on: {p[index]}")
+    msg['Subject'] = "Unustatud parool"
+    msg['From'] = "jelizaveta.ostapjuk.work@gmail.com"
+    msg['To'] = email
 
-#def send_to_email()
+    try:
+        server = smtplib.SMTP(smtp_server, port)
+        server.ehlo()
+        server.starttls(context=context)
+        server.ehlo()
+        server.login(sender_email, password)
+        server.send_message(msg)
+    except:
+       print("Viga")
